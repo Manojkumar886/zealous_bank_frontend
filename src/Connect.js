@@ -21,3 +21,11 @@ export const Loginprocess = async (object) => {
         alert(err);
     }
 }
+
+export const Createaccount = async (object) => {
+
+    const t = await axios.post(`http://localhost:8080/zealousbank/accountcreate`, object);
+
+    return t;
+
+}

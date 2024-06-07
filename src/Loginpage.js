@@ -70,7 +70,7 @@ export const Loginpage = () => {
                                             <input class="form-check-input" type="checkbox" value="" id="form1Example3" checked />
                                             <label class="form-check-label" for="form1Example3"> Remember me </label>
                                         </div>
-                                        <a href="/createaccount"
+                                        <a
                                             onClick={() => {
                                                 setCreatepage(true);
                                             }

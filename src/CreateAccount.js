@@ -1,6 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap-icons/font/bootstrap-icons.css'
 import { useState } from 'react'
+import { Createaccount } from './Connect'
 
 export const Accountform = () => {
 
@@ -25,8 +26,10 @@ export const Accountform = () => {
     }
 
 
-    const register = () => {
+    const register = async () => {
         alert(JSON.stringify(account))
+        const t = await Createaccount(account);
+        window.location.assign("/")
     }
     return (
         <>
@@ -109,7 +112,7 @@ export const Accountform = () => {
                             </div>
                             <div className="row justify-content-around mt-4">
                                 <button className="btn btn-success col-3 ms-3"
-                                    onClick={register}  ><a href='/'>SUBMIT</a></button>
+                                    onClick={register}  >SUBMIT</button>
                             </div>
                         </div>
                     </div>
