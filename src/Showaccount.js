@@ -15,7 +15,7 @@ export const Viewaccountdetails = () => {
     })
     useEffect(() => {
         setvalues();
-    })
+    }, [])
 
     const setvalues = async () => {
         const t = await Findoneuser();

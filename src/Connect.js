@@ -40,3 +40,16 @@ export const Findoneuser = async () => {
 
     return t;
 }
+
+export const CreateTransaction = async (object) => {
+    const t = await axios.post(`http://127.0.0.1:8080/zealousbank/createtransaction`, object,
+        {
+            headers:
+            {
+                "Authorization": `Basic ${sessionStorage.getItem('loginuser')}`
+            }
+        }
+    );
+
+    return t;
+}
