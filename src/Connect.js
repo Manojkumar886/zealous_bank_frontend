@@ -27,5 +27,16 @@ export const Createaccount = async (object) => {
     const t = await axios.post(`http://localhost:8080/zealousbank/accountcreate`, object);
 
     return t;
+}
 
+export const Findoneuser = async () => {
+    const t = await axios.get(`http://127.0.0.1:8080/zealousbank/${sessionStorage.getItem('accountsecurity')}`,
+        {
+            headers:
+            {
+                "Authorization": `Basic ${sessionStorage.getItem('loginuser')}`
+            }
+        });
+
+    return t;
 }
