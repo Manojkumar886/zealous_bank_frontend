@@ -11,16 +11,22 @@ export let Homepage = () => {
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="mr-auto">
-                            <Nav.Link href="/">ACCOUNT  DETAILS</Nav.Link>
+                            <Nav.Link href="/yourinfo">ACCOUNT  DETAILS</Nav.Link>
                             <NavDropdown title="TRANSACTION DETAILS" id="basic-nav-dropdown">
-                                <NavDropdown.Item href="#action/3.1">NEW TRANSACTION</NavDropdown.Item>
-                                <NavDropdown.Item href="#action/3.2">
+                                <NavDropdown.Item href="/createtransaction">NEW TRANSACTION</NavDropdown.Item>
+                                <NavDropdown.Item href="/yourtransactiondetails">
                                     LIST ALL TRANSACTION
                                 </NavDropdown.Item>
                             </NavDropdown>
                         </Nav>
                         <Nav className="ms-auto d-flex align-items-center">
-                            <Button className="btn btn-primary ms-2">PLUG OUT</Button>
+                            <Button className="btn btn-primary ms-2"
+                                onClick={() => {
+                                    sessionStorage.removeItem("loginuser");
+                                    sessionStorage.removeItem("accountsecurity");
+                                    window.location.assign("/");
+                                }
+                                }>PLUG OUT</Button>
                             <Button className="btn btn-danger ms-2">REMOVE ACCOUNT</Button>
                         </Nav>
                     </Navbar.Collapse>
