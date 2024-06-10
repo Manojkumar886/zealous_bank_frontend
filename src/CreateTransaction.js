@@ -1,10 +1,12 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap-icons/font/bootstrap-icons.css'
 import { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router';
 import { CreateTransaction, Findoneuser } from './Connect'
 
 export const Transactionform = () => {
 
+    const navi = useNavigate();
     const [newtransation, setNewtransation] = useState({
         "transactionNumber": 0,
         "transactionType": "",
@@ -13,16 +15,6 @@ export const Transactionform = () => {
         "transactionHolderNumber": 0,
         "transactionDate": "",
         "account": {}
-    })
-
-    const [account, setAccount] = useState({
-        "accountNumber": 0,
-        "accountHoldername": "",
-        "accountIfsccode": "",
-        "accountBalance": 0.0,
-        "accountHoldercontactno": 0,
-        "accountHolderplace": "",
-        "password": ""
     })
 
     const setaccount = async () => {
@@ -114,7 +106,7 @@ export const Transactionform = () => {
                                     onClick={
                                         async () => {
                                             const t = await CreateTransaction(newtransation);
-                                            window.location.assign("/");
+                                            navi("/yourtransactiondetails");
                                         }
                                     } >SUBMIT</button>
                             </div>

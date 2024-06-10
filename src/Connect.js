@@ -41,6 +41,19 @@ export const Findoneuser = async () => {
     return t;
 }
 
+
+export const Deleteaccount = async (id) => {
+    const t = await axios.delete(`http://127.0.0.1:8080/zealousbank/deletebyid/${id}`,
+        {
+            headers:
+            {
+                "Authorization": `Basic ${sessionStorage.getItem('loginuser')}`
+            }
+        }
+    )
+    return t;
+}
+
 export const CreateTransaction = async (object) => {
     const t = await axios.post(`http://127.0.0.1:8080/zealousbank/createtransaction`, object,
         {
@@ -50,6 +63,18 @@ export const CreateTransaction = async (object) => {
             }
         }
     );
+    return t;
+}
 
+
+
+export const Listalltransactions = async (id) => {
+    const t = await axios.get(`http://localhost:8080/zealousbank/gettransactionbyoneaccount/${id}`,
+        {
+            headers:
+            {
+                "Authorization": `Basic ${sessionStorage.getItem('loginuser')}`
+            }
+        })
     return t;
 }

@@ -5,6 +5,7 @@ import { Homepage } from './Mainpage';
 import { Viewaccountdetails } from './Showaccount';
 import { Transactionform } from './CreateTransaction';
 import { AllTransactions } from './Listalltransaction';
+import { Updateform } from './Updateprofile';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
                 <Route path='yourinfo' exact element={<Viewaccountdetails />} />
                 <Route path='createtransaction' exact element={<Transactionform />} />
                 <Route path='yourtransactiondetails' exact element={<AllTransactions />} />
+                <Route path='updateprofile' exact element={<Updateform />} />
               </Routes>
             </BrowserRouter>
           </>
